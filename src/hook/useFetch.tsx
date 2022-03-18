@@ -13,7 +13,19 @@ const useFetch = () => {
     useEffect(() => {
         getProducts()
          .then(data => {
-             console.log(data);             
+            //  console.log(data);   
+            setData({
+                products: data,
+                isLoading: false,
+                isError: false
+            })          
+         })
+         .catch(err => {
+             setData({
+                products: [],
+                isLoading: false,
+                isError: true
+             })
          })
     },[]) 
 
