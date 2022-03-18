@@ -1,9 +1,11 @@
 import React from 'react';
+import ListProducts from '../../components/ListProducts/ListProducts';
+import './styles.scss';
 
 const Home = () => {
     return (
         <div>
-            <h1>Desde Home</h1>
+            <ListProducts />
         </div>
     )
 }
