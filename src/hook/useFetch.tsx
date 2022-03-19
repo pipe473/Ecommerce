@@ -14,7 +14,7 @@ const useFetch = () => {
         getProducts()
          .then(data => {
 
-            const customData = data.map((product: Productitem) => ({ ...product, description: product.description.substring(0,55) })); 
+            const customData = data.map((product: Productitem) => ({ ...product, description: product.description.substring(0,50), title: product.title.substring(0,20) })); 
 
             //  console.log(data);   
             setData({

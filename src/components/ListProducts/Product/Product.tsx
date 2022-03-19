@@ -11,14 +11,16 @@ type Props =  {
 
 const Product = ( { product, handleAddToCart }: Props ) => {
     return (
-        <Card style={{ width: '16rem', margin: '5px' }}>
+        <Card style={{ width: '18rem', margin: '5px' }}>
             <Card.Img variant="top" src={product.image} className="card-img"/>
             <Card.Body>
                 <Card.Title className="card-title">{product.title}</Card.Title>
                 <Card.Text className="card-description">
                     {product.description}
                 </Card.Text>
-                Precio:{product.price}€
+                <Card.Text className="card-description-price">
+                    Precio: {product.price}€
+                </Card.Text>                
                 <Button variant="primary" onClick={() => handleAddToCart(product)}>Añadir al carrito</Button>
             </Card.Body>
         </Card>

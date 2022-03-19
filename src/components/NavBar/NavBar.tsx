@@ -22,8 +22,8 @@ const NavBar = ({handleOpen}: Props) => {
                     <FontAwesomeIcon 
                       icon={faShoppingCart}
                       color="white" 
-                      size="2x"
-                      style={{cursor: 'pointer'}}
+                      size="lg"
+                      style={{cursor: 'pointer', marginRight: '5px', borderRadius: '14px'}}
                       onClick={() => handleOpen(true) } />
                       <Badge bg='secondary'>8</Badge>
                 </Container>
