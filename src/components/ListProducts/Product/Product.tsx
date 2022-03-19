@@ -2,6 +2,7 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Productitem } from '../../../types/typeApp';
+import './styles.scss';
 
 type Props =  {
     product: Productitem;
@@ -10,11 +11,11 @@ type Props =  {
 
 const Product = ( { product, handleAddToCart }: Props ) => {
     return (
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={product.image}/>
+        <Card style={{ width: '16rem', margin: '5px' }}>
+            <Card.Img variant="top" src={product.image} className="card-img"/>
             <Card.Body>
-                <Card.Title>{product.title}</Card.Title>
-                <Card.Text>
+                <Card.Title className="card-title">{product.title}</Card.Title>
+                <Card.Text className="card-description">
                     {product.description}
                 </Card.Text>
                 Precio:{product.price}€

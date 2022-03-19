@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ProductFetch } from "../types/typeApp";
+import { ProductFetch, Productitem } from "../types/typeApp";
 import getProducts from "../components/helpers/getData";
 
 const useFetch = () => {
@@ -13,9 +13,12 @@ const useFetch = () => {
     useEffect(() => {
         getProducts()
          .then(data => {
+
+            const customData = data.map((product: Productitem) => ({ ...product, description: product.description.substring(0,55) })); 
+
             //  console.log(data);   
             setData({
-                products: data,
+                products: customData,
                 isLoading: false,
                 isError: false
             })          
