@@ -2,9 +2,13 @@ import React from 'react';
 import { Nav, Navbar, Container, Badge } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-const NavBar = () => {
+type Props = {
+    handleOpen: (state: boolean) => void
+} 
+
+const NavBar = ({handleOpen}: Props) => {
     return (
             <Navbar bg="dark" variant="dark" expand="lg">
                 <Container>
@@ -19,7 +23,8 @@ const NavBar = () => {
                       icon={faShoppingCart}
                       color="white" 
                       size="2x"
-                      style={{cursor: 'pointer'}} />
+                      style={{cursor: 'pointer'}}
+                      onClick={() => handleOpen(true) } />
                       <Badge bg='secondary'>8</Badge>
                 </Container>
             </Navbar>

@@ -4,12 +4,14 @@ import { Route, Switch } from 'react-router-dom';
 import Home from '../../pages/Home/Home';
 import Checkout from '../../pages/Checkout/Checkout';
 
+type Props = {
+    handleOpen: (state: boolean) => void
+} 
 
-
-const Navigation = () => {
+const Navigation = ({ handleOpen }: Props) => {
     return (
         <>
-            <NavBar />
+            <NavBar handleOpen={ handleOpen } />
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route exact path='/checkout' component={Checkout} />
