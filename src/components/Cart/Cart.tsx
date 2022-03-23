@@ -5,6 +5,9 @@ import Item from './Item/Item';
 
 const Cart = () => {
     const { cartItems } = useContext(CartContext);
+
+    if(!cartItems.length) return <h5>Ningún item por pagar</h5>
+
     return (
         <div className="shopping-cart">
             { cartItems.map(item => (
