@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { BrowserRouter as  Router } from 'react-router-dom';
 import Navigation from "./components/Navigation/Navigation";
 import Sidebar from './components/SIdebar/Sidebar';
-import { BrowserRouter as  Router } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
 
 
 const AppCommerce = () => {
@@ -10,8 +11,10 @@ const AppCommerce = () => {
 
   return (
    <Router>
-     <Navigation handleOpen={ setShow } />
-     {show && <Sidebar handleClose={setShow} />}
+     <CartProvider>
+      <Navigation handleOpen={ setShow } />
+      {show && <Sidebar handleClose={setShow} />}
+     </CartProvider>
    </Router>
   );
 }

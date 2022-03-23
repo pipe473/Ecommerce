@@ -7,7 +7,7 @@ type Props = {
     handleClose: (state: boolean) => void
 } 
 
-const Sidebar = ({ handleClose}: Props ) => {
+const Sidebar = ({ handleClose }: Props ) => {
     return (
         <Offcanvas 
             show={true} 
