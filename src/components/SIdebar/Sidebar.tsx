@@ -2,6 +2,7 @@ import React from 'react';
 import { Offcanvas } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import Cart  from '../Cart/Cart';
 
 type Props = {
     handleClose: (state: boolean) => void
@@ -23,7 +24,7 @@ const Sidebar = ({ handleClose }: Props ) => {
           style={{marginRight: '5px'}} />Carrito de compras</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-            Cart
+            <Cart />
         </Offcanvas.Body>
       </Offcanvas>  
     )
